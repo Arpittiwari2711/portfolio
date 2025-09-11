@@ -266,7 +266,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="py-6 bg-slate-950 text-center text-gray-400 text-sm border-t border-cyan-500/20">
-        <p>Developed with love by Arpit Rajput © 2025</p>
+        <p>Developed with love by Arpit Tiwari © 2025</p>
       </footer>
     </div>
   );

@@ -23,7 +23,7 @@ interface ContactSectionProps {
 const ContactSection: React.FC<ContactSectionProps> = ({
   title = "Contact Me",
   subtitle = "Let's Work Together",
-  description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum nobis possimus tenetur quidem fugit? Dolorum cupiditate deleniti perspiciatis ea soluta repellat dignissimos eum assumenda, iusto quas nulla ullam. Quaerat, maiores!",
+  description = "I'm always open to collaborating on exciting projects, internships, and opportunities in backend development, AI/ML, and web technologies. With experience in Django, Python, MySQL, and full-stack development, plus hackathon and internship exposure, I bring both technical expertise and a problem-solving mindset.",
   email = "tiwariarpitat2711@gmail.com",
   phone = "7772831368",
 }) => {

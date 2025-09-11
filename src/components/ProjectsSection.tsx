@@ -7,6 +7,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   imageUrl: string;
+  icon?: string;
   link?: string;
 }
 
@@ -14,6 +15,7 @@ const ProjectCard = ({
   title,
   description,
   imageUrl,
+  icon,
   link = "#",
 }: ProjectCardProps) => {
   return (
@@ -41,7 +43,10 @@ const ProjectCard = ({
           </div>
         </div>
         <CardContent className="p-4">
-          <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+          <div className="flex items-center gap-3 mb-2">
+            {icon && <span className="text-2xl">{icon}</span>}
+            <h3 className="text-xl font-bold text-white">{title}</h3>
+          </div>
           <p className="text-gray-300 text-sm">{description}</p>
         </CardContent>
       </Card>
@@ -50,31 +55,34 @@ const ProjectCard = ({
 };
 
 const ProjectsSection = () => {
-  // Default projects data if none is provided
+  // Real projects data
   const projects: ProjectCardProps[] = [
     {
-      title: "Mobile App Design",
+      title: "Gesture-Controlled PowerPoint Presentation",
       description:
-        "A modern mobile application with intuitive UI and seamless user experience. Designed with accessibility and performance in mind.",
+        "A system that allows users to control PowerPoint slides using hand gestures, built with Python and OpenCV.",
+      icon: "🖐",
       imageUrl:
-        "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&q=80",
-      link: "#mobile-app",
+        "https://images.unsplash.com/photo-1559163499-413811fb2344?w=800&q=80",
+      link: "#gesture-powerpoint",
     },
     {
-      title: "Website Development",
+      title: "Amazon Clone Website",
       description:
-        "Responsive website with modern design elements, interactive features, and optimized performance across all devices.",
+        "A responsive e-commerce front-end clone of Amazon developed using HTML, CSS, JavaScript, React.js, and Node.js.",
+      icon: "🛒",
       imageUrl:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      link: "#website-dev",
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+      link: "#amazon-clone",
     },
     {
-      title: "Language Learning App UI",
+      title: "CRM System (Customer Relationship Management)",
       description:
-        "Educational platform with gamified elements to enhance user engagement and improve learning outcomes.",
+        "A CRM web application built using Python (Django framework) with MySQL database integration for managing clients, leads, and interactions.",
+      icon: "📊",
       imageUrl:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
-      link: "#language-app",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      link: "#crm-system",
     },
   ];
 
@@ -112,6 +120,7 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imageUrl={project.imageUrl}
+              icon={project.icon}
               link={project.link}
             />
           ))}
