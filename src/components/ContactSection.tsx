@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Facebook,
   Twitter,
   Instagram,
   Linkedin,
   Mail,
   Phone,
+  Github,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -70,9 +70,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             </div>
 
             <div className="flex space-x-4">
-              <SocialIcon icon={<Facebook />} href="#" />
+              <SocialIcon icon={<Github />} href="https://github.com/Arpittiwari2711" />
 
-              <SocialIcon icon={<Linkedin />} href="#" />
+              <SocialIcon icon={<Linkedin />} href="https://in.linkedin.com/in/arpit-tiwari-3b71b3259" />
             </div>
           </motion.div>
 
@@ -129,6 +129,8 @@ const SocialIcon: React.FC<SocialIconProps> = ({ icon, href = "#" }) => {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-10 h-10 rounded-full border border-cyan-500 flex items-center justify-center text-cyan-500 transition-all duration-300 hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_15px_rgba(0,255,255,0.5)]"
     >
       {icon}
