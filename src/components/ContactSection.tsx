@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,6 +27,30 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   email = "tiwariarpitat2711@gmail.com",
   phone = "7772831368",
 }) => {
+  const [responseMsg, setResponseMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    
+    try {
+      const res = await fetch(form.action, { 
+        method: form.method, 
+        body: data 
+      });
+      
+      if (res.ok) {
+        setResponseMsg("✅ Message sent successfully!");
+        form.reset();
+      } else {
+        setResponseMsg("❌ Failed to send. Please try again later.");
+      }
+    } catch (error) {
+      setResponseMsg("❌ Failed to send. Please try again later.");
+    }
+  };
+
   return (
     <section
       className="py-16 bg-slate-950 relative overflow-hidden"
@@ -82,37 +106,49 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <form className="space-y-4">
-              <Input
+            <form 
+              id="contactForm" 
+              action="https://getform.io/f/bdrdzqmb" 
+              method="POST"
+              onSubmit={handleSubmit}
+              className="space-y-4"
+            >
+              <input
                 type="text"
-                placeholder="Enter Your Name"
-                className="bg-slate-800/50 border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white h-12 focus:shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full bg-slate-800/50 border border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white h-12 px-4 rounded-md focus:shadow-[0_0_10px_rgba(0,255,255,0.3)] focus:outline-none"
               />
 
-              <Input
+              <input
                 type="email"
-                placeholder="Enter Your Email"
-                className="bg-slate-800/50 border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white h-12 focus:shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full bg-slate-800/50 border border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white h-12 px-4 rounded-md focus:shadow-[0_0_10px_rgba(0,255,255,0.3)] focus:outline-none"
               />
 
-              <Input
-                type="text"
-                placeholder="Enter Your Subject"
-                className="bg-slate-800/50 border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white h-12 focus:shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                className="w-full bg-slate-800/50 border border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white min-h-[180px] px-4 py-3 rounded-md resize-none focus:shadow-[0_0_10px_rgba(0,255,255,0.3)] focus:outline-none"
               />
 
-              <Textarea
-                placeholder="Enter Your Message"
-                className="bg-slate-800/50 border-slate-600 focus:border-cyan-400 focus:ring-cyan-400/20 text-white min-h-[180px] resize-none focus:shadow-[0_0_10px_rgba(0,255,255,0.3)]"
-              />
-
-              <Button
+              <button
                 type="submit"
                 className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 px-6 rounded-md font-medium transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.5)] hover:shadow-[0_0_25px_rgba(0,255,255,0.7)]"
               >
-                Submit
-              </Button>
+                Send
+              </button>
             </form>
+
+            {responseMsg && (
+              <p id="responseMsg" className="mt-4 text-center text-white font-medium">
+                {responseMsg}
+              </p>
+            )}
           </motion.div>
         </div>
       </div>
