@@ -11,6 +11,8 @@ const SocialIcon = ({ icon, href = "#" }: SocialIconProps) => {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-10 h-10 rounded-full border border-[#0ff] flex items-center justify-center text-[#0ff] transition-all duration-300 hover:bg-[#0ff] hover:text-[#0a192f] hover:shadow-[0_0_15px_#0ff]"
     >
       {icon}
@@ -33,14 +35,14 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   name = "Arpit Tiwari",
-  title = "Python and Django Developer",
-  description = "I build responsive, scalable, and interactive web applications using modern tools like Python, React, and Node.js",
+  title = "Python Developer",
+  description = "I build responsive, scalable, and interactive web applications using modern tools like Python and Django",
   profileImage = "/images/img.jpg",
   socialLinks = {
     facebook: "#",
     twitter: "#",
     instagram: "#",
-    linkedin: "www.linkedin.com/in/arpit-tiwari-3b71b3259",
+    linkedin: "https://www.linkedin.com/in/arpit-tiwari2711/",
   },
 }: HeroSectionProps) => {
   return (

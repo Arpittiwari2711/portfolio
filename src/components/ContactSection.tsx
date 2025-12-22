@@ -96,7 +96,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <div className="flex space-x-4">
               <SocialIcon icon={<Github />} href="https://github.com/Arpittiwari2711" />
 
-              <SocialIcon icon={<Linkedin />} href="https://in.linkedin.com/in/arpit-tiwari-3b71b3259" />
+              <SocialIcon icon={<Linkedin />} href="https://www.linkedin.com/in/arpit-tiwari2711/" />
             </div>
           </motion.div>
 
