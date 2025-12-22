@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome! This is the source code for my personal portfolio website, designed to showcase my skills, projects, and journey as a computer science student. It was built from scratch with a focus on clean design, smooth animations, and a great user experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌟 Features
+This portfolio is packed with modern features to create an engaging experience:
 
-## Expanding the ESLint configuration
+🎨 Dual-Theme: A sleek dark mode and a clean light mode, with the user's preference saved in their browser.
+📱 Fully Responsive: The layout seamlessly adapts to all devices, from large desktop screens to mobile phones.
+🎬 Smooth Animations: Sections and skill bars animate into view as you scroll, creating a dynamic feel.
+✍️ Typing Effect: An auto-typing effect in the hero section introduces me and my background.
+🌐 Functional Contact Form: A real, working contact form powered by Formspree that delivers messages directly to my inbox.
+🖱️ Interactive Grid: A fun, interactive grid of pixels that light up on mouseover.
+📜 Smooth Scrolling: Clean navigation between sections.
+💻 Tech Stack
+This project was built using fundamental web technologies, with no frameworks involved.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+HTML5: For the structure and content of the website.
+CSS3: For all the styling, layout, animations, and responsive design. It uses modern features like CSS Variables for easy theme management.
+JavaScript (ES6): For all the interactivity, including the theme switcher, scroll animations, and form handling.
+Font Awesome: For the icons used throughout the site.
+Formspree: For the backend handling of the contact form.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+📫 Let's Connect!
+I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!
+
+LinkedIn: [https://www.linkedin.com/in/arpit-tiwari2711/]
+GitHub: Arpittiwari2711
+Email: tiwariarpitat2711@gmail.com
+Thank you for visiting my project!
