@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Github, Twitter, Instagram, Linkedin, FileText } from "lucide-react";
 
 interface SocialIconProps {
   icon: React.ReactNode;
@@ -31,6 +31,7 @@ interface HeroSectionProps {
     instagram?: string;
     linkedin?: string;
   };
+  cvLink?: string;
 }
 
 const HeroSection = ({
@@ -44,6 +45,7 @@ const HeroSection = ({
     instagram: "#",
     linkedin: "https://www.linkedin.com/in/arpit-tiwari2711/",
   },
+  cvLink = "/resume.pdf",
 }: HeroSectionProps) => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 flex items-center py-16 px-4 md:px-8 lg:px-16">
@@ -73,6 +75,10 @@ const HeroSection = ({
             <SocialIcon
               icon={<Linkedin size={20} />}
               href={socialLinks.linkedin}
+            />
+            <SocialIcon
+              icon={<FileText size={20} />}
+              href={cvLink}
             />
           </div>
         </motion.div>
