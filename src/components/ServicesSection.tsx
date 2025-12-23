@@ -12,7 +12,7 @@ const ServicesSection = () => {
     {
       title: "Frontend Development",
       description:
-        "Creating responsive and interactive user interfaces using React, JavaScript, and modern CSS frameworks.",
+        "Creating responsive and interactive user interfaces using modern CSS frameworks.",
       icon: "⚛️",
     },
     {

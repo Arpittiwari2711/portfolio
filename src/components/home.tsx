@@ -1,11 +1,17 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import HeroSection from "./HeroSection";
 import ServicesSection from "./ServicesSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
 
 const Home = () => {
+  const [showJourney, setShowJourney] = useState(false);
+
+  const toggleJourney = () => {
+    setShowJourney(!showJourney);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
       {/* Navigation Bar */}
@@ -102,7 +108,7 @@ const Home = () => {
               I'm Arpit Tiwari, a Computer Science & Engineering student
               passionate about problem-solving, clean code, and creating
               impactful technology. Skilled in Python, Django, HTML, CSS,
-              JavaScript, MySQL, and data structures & algorithms, I specialize
+              MySQL, and data structures & algorithms, I specialize
               in backend development while exploring AI/ML.
             </p>
             <p className="text-gray-300 mb-6">
@@ -115,9 +121,52 @@ const Home = () => {
               Outside tech, I enjoy singing, playing guitar, basketball, and
               traveling, which keep me inspired and balanced.
             </p>
-            <button className="px-6 py-2 bg-transparent border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.5)] hover:shadow-[0_0_25px_rgba(45,212,191,0.7)]">
-              More About Me
+            <button 
+              onClick={toggleJourney}
+              className="px-6 py-2 bg-transparent border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.5)] hover:shadow-[0_0_25px_rgba(45,212,191,0.7)]"
+            >
+              {showJourney ? "Show Less" : "More About Me"}
             </button>
+
+            {/* Hidden Journey Content */}
+            <AnimatePresence>
+              {showJourney && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="mt-8 overflow-hidden"
+                >
+                  <div className="pt-6 border-t border-cyan-400/30">
+                    <h3 className="text-3xl font-bold mb-6">
+                      My <span className="text-cyan-400">Journey</span> & What I Do
+                    </h3>
+                    
+                    <div className="space-y-6 text-gray-300">
+                      <p className="text-lg leading-relaxed">
+                        I'm a Computer Science & Engineering student with a strong interest in understanding how software systems work behind the scenes. My journey started with problem-solving and core computer science concepts, which naturally led me toward backend development and building reliable, scalable applications.
+                      </p>
+                      
+                      <p className="text-lg leading-relaxed">
+                        I primarily work with Python and Django, focusing on writing clean, maintainable code and designing systems that scale efficiently. I have hands-on experience with MySQL, backend logic, and a solid foundation in data structures and algorithms, which helps me approach problems in a structured and optimized way.
+                      </p>
+                      
+                      <p className="text-lg leading-relaxed">
+                        Alongside backend development, I am actively exploring AI/ML concepts and how intelligent systems can be integrated into real-world applications. I enjoy learning continuously and applying new ideas through practical projects.
+                      </p>
+                      
+                      <div className="mt-8 p-6 border border-cyan-400/30 rounded-lg bg-slate-900/50">
+                        <h4 className="text-xl font-semibold text-cyan-400 mb-3">Career Goal:</h4>
+                        <p className="text-lg leading-relaxed">
+                          My goal is to grow as an AI/ML-focused engineer with a strong backend foundation, contributing to impactful products while continuously improving my technical depth and problem-solving skills.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </section>
@@ -178,7 +227,7 @@ const Home = () => {
                   { name: "Python", percentage: 90 },
                   { name: "Django", percentage: 85 },
                   { name: "HTML/CSS", percentage: 90 },
-                  { name: "JavaScript", percentage: 85 },
+
                   { name: "MySQL", percentage: 80 },
                 ].map((skill, index) => (
                   <div key={index}>
@@ -239,25 +288,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              My <span className="text-cyan-400">Projects</span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              A showcase of my recent work and projects I've contributed to.
-            </p>
-          </motion.div>
-
-          <ProjectsSection />
-        </div>
-      </section>
+      <ProjectsSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-slate-950/50">

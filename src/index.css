@@ -75,5 +75,6 @@
   }
   html {
     @apply dark;
+    scroll-behavior: smooth;
   }
 }

@@ -69,7 +69,7 @@ const ProjectsSection = () => {
     {
       title: "Amazon Clone Website",
       description:
-        "A responsive e-commerce front-end clone of Amazon developed using HTML, CSS, JavaScript, React.js, and Node.js.",
+        "A responsive e-commerce front-end clone of Amazon developed using HTML, CSS, and Node.js.",
       icon: "🛒",
       imageUrl:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
