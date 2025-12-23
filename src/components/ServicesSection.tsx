@@ -49,12 +49,9 @@ const ServicesSection = () => {
           <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
             {service.title}
           </h3>
-          <p className="text-gray-400 mb-6 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed">
             {service.description}
           </p>
-          <button className="px-6 py-2 bg-transparent border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.5)] hover:shadow-[0_0_25px_rgba(45,212,191,0.7)]">
-            Learn More
-          </button>
         </motion.div>
       ))}
     </div>
