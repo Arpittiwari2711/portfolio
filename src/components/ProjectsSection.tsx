@@ -67,13 +67,13 @@ const ProjectsSection = () => {
       link: "#gesture-powerpoint",
     },
     {
-      title: "Amazon Clone Website",
+      title: "Student Result Analyzer",
       description:
-        "A responsive e-commerce front-end clone of Amazon developed using HTML, CSS, and Node.js.",
-      icon: "🛒",
+        "A beginner-friendly Python project to manage and analyze student marks using CSV, pandas, and matplotlib. It allows users to add student records, view all data, analyze average marks, identify topper and lowest scorer, generate subject-wise bar charts, and search students by roll number.",
+      icon: "📊",
       imageUrl:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-      link: "#amazon-clone",
+        "/images/student-dashboard.png?v=2",
+      link: "#student-result-analyzer",
     },
     {
       title: "CRM System (Customer Relationship Management)",
