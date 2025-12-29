@@ -64,7 +64,7 @@ const ProjectsSection = () => {
       icon: "🖐",
       imageUrl:
         "https://images.unsplash.com/photo-1559163499-413811fb2344?w=800&q=80",
-      link: "#gesture-powerpoint",
+      link: "https://github.com/Arpittiwari2711/Gesture-control-PPT-Slider",
     },
     {
       title: "Student Result Analyzer",
@@ -73,7 +73,7 @@ const ProjectsSection = () => {
       icon: "📊",
       imageUrl:
         "/images/student-dashboard.png?v=2",
-      link: "#student-result-analyzer",
+      link: "https://github.com/Arpittiwari2711/result_analyzer",
     },
     {
       title: "CRM System (Customer Relationship Management)",
@@ -82,7 +82,7 @@ const ProjectsSection = () => {
       icon: "📊",
       imageUrl:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      link: "#crm-system",
+      link: "https://github.com/Arpittiwari2711/dev",
     },
   ];
 
