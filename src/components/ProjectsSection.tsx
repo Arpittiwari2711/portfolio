@@ -130,6 +130,7 @@ const ProjectsSection = () => {
           <Button
             variant="outline"
             className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/20 hover:text-white px-8 py-2 hover:shadow-[0_0_15px_rgba(0,255,255,0.5)]"
+            onClick={() => window.open("https://github.com/Arpittiwari2711?tab=repositories", "_blank")}
           >
             View All Projects
           </Button>
