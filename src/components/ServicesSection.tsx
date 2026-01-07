@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Terminal } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -7,7 +8,7 @@ const ServicesSection = () => {
       title: "Python & Django Development",
       description:
         "Building robust web applications using Python and Django framework with clean, maintainable code.",
-      icon: "🐍",
+      icon: "py",
     },
     {
       title: "Frontend Development",
@@ -44,7 +45,13 @@ const ServicesSection = () => {
           className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 group"
         >
           <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-            {service.icon}
+            {service.icon === "py" ? (
+              <span className="text-5xl font-bold text-cyan-400">Py</span>
+            ) : service.icon === "terminal" ? (
+              <Terminal className="w-10 h-10 text-cyan-400" />
+            ) : (
+              service.icon
+            )}
           </div>
           <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
             {service.title}
